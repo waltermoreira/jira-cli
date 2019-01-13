@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "jira-cli"
+version = "0.1.0"
+description = ""
+authors = ["Walter Moreira <wmoreira@auntbertha.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+jira = "^2.0"
+PyYAML = "^3.13"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.0"
+ipython = "^7.2"
+mypy = "^0.650.0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

@@ -1,0 +1,4 @@
+user: your_username
+apikey: your_api_key 
+server: https://your_jira_server.atlassian.net
+
