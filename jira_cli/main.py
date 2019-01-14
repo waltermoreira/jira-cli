@@ -39,6 +39,15 @@ class Jira(object):
     def active_sprints(self) -> List[Sprint]:
         return [sprint for sprint in self.all_sprints() if sprint.state == "ACTIVE"]
 
+    def epic(self, name: str) -> Issue:
+        """Find an epic"""
+        # noinspection PyUnresolvedReferences
+        return [
+            issue
+            for issue in self.search("issueType=Epic")
+            if issue.fields.summary.startswith(name)
+        ][0]
+
     def log_time(self, issue: Issue, time_expr: str) -> None:
         self.add_worklog(issue, timeSpent=time_expr)
         issue.update()
