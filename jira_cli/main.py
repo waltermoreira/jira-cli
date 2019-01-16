@@ -45,7 +45,7 @@ class Jira(object):
         return [
             issue
             for issue in self.search("issueType=Epic")
-            if issue.fields.summary.startswith(name)
+            if issue.fields.summary.lower().startswith(name.lower())
         ][0]
 
     def log_time(self, issue: Issue, time_expr: str) -> None:
